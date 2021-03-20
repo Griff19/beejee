@@ -149,9 +149,8 @@ class Model
     {
         if (!empty($data)) {
             foreach ($data as $key => $value) {
-                //if (in_array($key, $this->fields())) {
-                    $this->$key = $value;
-                //}
+                $value = Helper::safetyStr($value);
+                $this->$key = $value;
             }
         } else {
             return false;
