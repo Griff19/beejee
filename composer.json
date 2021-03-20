@@ -1,0 +1,11 @@
+{
+  "name": "vendor/griff",
+  "description": "Test task from Beejee",
+  "autoload": {
+    "psr-4": {
+      "controllers\\": "app/controllers/",
+      "models\\": "app/models/",
+      "griff\\": "vendor/griff/"
+    }
+  }
+}
