@@ -42,14 +42,16 @@ class TaskController extends Controller
         $model = new Task();
         
         if ($model->load($_POST)) {
-            if ($model->save()) {
-                Alert::setFlash('success', T::t('TASK') . ' ' . T::t('ADDED_TASK'));
-            } else {
-                Alert::setFlash('error', T::t('ERROR'));
+            if ($model->validate()) {
+    
+                if ($model->save()) {
+                    Alert::setFlash('success', T::t('TASK') . ' ' . T::t('ADDED_TASK'));
+                } else {
+                    Alert::setFlash('error', T::t('ERROR'));
+                }
+                return $this->redirect('task/index');
             }
-            return $this->redirect('task/index');
         }
-        
         return $this->render('create');
     }
     
@@ -59,11 +61,16 @@ class TaskController extends Controller
         $new_model = new Task();
         
         if ($new_model->load($_POST)) {
+            $new_model->performed = $model->performed;
+            $new_model->edit = $model->edit;
+            
             if (isset($_POST['performed'])) {
                 $new_model->performed = true;
             }
+            if ($new_model->text_task != $model->text_task)
+                $new_model->edit = true;
             
-            if ($new_model->update()) {
+            if ($new_model->validate() && $new_model->update()) {
                 return $this->redirect('task/index');
             }
         }

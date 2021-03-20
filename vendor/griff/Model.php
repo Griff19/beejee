@@ -8,6 +8,8 @@ namespace griff;
  * @property $table string - name of table in database
  * @property db \PDO
  */
+use griff\Exception;
+
 class Model
 {
 	public $id;
@@ -223,10 +225,9 @@ class Model
         $prepare->execute();
     
         $result = $prepare->fetchAll();
-        if ($result)
-            return $result;
-        else
-            throw new Exception(T::t('ERROR_404'), 404);
+        
+        return $result;
+        
     }
     
     public static function getCount()
