@@ -37,10 +37,10 @@ class Task extends Model
     {
         $arr_sort = [
             0 => 'id',
-            1 => 'user_name DESC',
-            2 => 'user_name',
-            3 => 'email DESC',
-            4 => 'email',
+            1 => 'user_name',
+            2 => 'user_name DESC',
+            3 => 'email',
+            4 => 'email DESC',
             5 => 'performed',
             6 => 'performed DESC',
         ];
