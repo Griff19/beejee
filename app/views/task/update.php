@@ -14,7 +14,7 @@ use griff\T;
 <form action="<?= Helper::url('task/update') ?>" method="post">
     <input hidden name="id" value="<?= $model->id ?>">
     
-    <input class="form-check-input" type="checkbox" value="<?= $model->performed ?>" name="performed" id="performed">
+    <input class="form-check-input" type="checkbox" value="" name="performed" id="performed" <?= $model->performed ? "checked":"" ?>>
     <label class="form-check-label" for="performed"> Выполнено </label><br>
     
     <label for="user_name" class="form-label"> * <?= T::t('USER')?>: </label><br/>
