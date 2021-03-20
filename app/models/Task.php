@@ -48,13 +48,14 @@ class Task extends Model
         return $arr_sort[$number];
     }
     
-    public function validate()
+    public function validate($scenario = 'create')
     {
-        if (User::isLogin() && App::user()->login == 'admin') {
-        
-        } else {
-            Alert::setFlash('error', "Необходимо авторизоваться в системе");
-            return false;
+        if ($scenario == 'create') {
+            if (User::isLogin() && App::user()->login == 'admin') {
+            } else {
+                Alert::setFlash('error', "Необходимо авторизоваться в системе");
+                return false;
+            }
         }
         
         $str_err = '';

@@ -42,7 +42,7 @@ class TaskController extends Controller
         $model = new Task();
         
         if ($model->load($_POST)) {
-            if ($model->validate()) {
+            if ($model->validate('create')) {
     
                 if ($model->save()) {
                     Alert::setFlash('success', T::t('TASK') . ' ' . T::t('ADDED_TASK'));
@@ -70,7 +70,7 @@ class TaskController extends Controller
             if ($new_model->text_task != $model->text_task)
                 $new_model->edit = true;
             
-            if ($new_model->validate() && $new_model->update()) {
+            if ($new_model->validate('update') && $new_model->update()) {
                 return $this->redirect('task/index');
             }
         }
