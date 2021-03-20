@@ -50,7 +50,7 @@ class Task extends Model
     
     public function validate($scenario = 'create')
     {
-        if ($scenario == 'create') {
+        if ($scenario == 'update') {
             if (User::isLogin() && App::user()->login == 'admin') {
             } else {
                 Alert::setFlash('error', "Необходимо авторизоваться в системе");
