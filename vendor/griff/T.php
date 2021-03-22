@@ -20,7 +20,7 @@ class T
         return [
             'LANG'                     => 'en',
             'NAME_USED'                => 'is already used',
-            'TITLE_TEST'               => 'Test Task 2.0',
+            'TITLE_TEST'               => 'Test Task BeeJee',
             'LINK_HOME'                => 'Home',
             'LINK_EXIT'                => 'Exit',
             'LINK_SIGN_IN'             => 'Sign in',
@@ -88,7 +88,7 @@ class T
         return [
             'LANG'                     => 'ru',
             'NAME_USED'                => 'уже используется',
-            'TITLE_TEST'               => 'Тестовое Задание 2.0',
+            'TITLE_TEST'               => 'Тестовое Задание BeeJee',
             'LINK_HOME'                => 'На главную',
             'LINK_EXIT'                => 'Выйти',
             'LINK_SIGN_IN'             => 'Войти',
