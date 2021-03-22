@@ -34,7 +34,7 @@ class Menu
                         } elseif ($name == 'visible') {
                             if (!$value) {$str = '';}
                         } elseif ($name == 'class') {
-                            $str = str_replace("class='p-2 text-dark'", "class='$value'", $str);
+                            $str = str_replace("class='nav-link'", "class='$value'", $str);
                         } else {
                             $str = "<a class='nav-link' href='" .Helper::url($value). "' title=''>$name</a> ";
                         }
