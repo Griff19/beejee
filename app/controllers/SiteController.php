@@ -26,7 +26,8 @@ class SiteController extends Controller
             if ($user) {
                 $_SESSION['id']    = $user->user_token;
                 $_SESSION['login'] = $user->login;
-                $this->redirect('user/view');
+                Alert::setFlash('success', $user->login . " успешно авторизован, Вы можете редактировать задачи");
+                $this->redirect('task/index');
             } else {
                 Alert::setFlash('error', T::t('ACCESS_DENI'));
             }
